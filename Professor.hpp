@@ -12,13 +12,10 @@ enum class AreaAtuacao{
 };
 
 class Professor{
-private:
-    string nome;
-    string matricula;
-    string cpf;
-    AreaAtuacao AreaAtuacao;
-public:
-    Professor();
-    ~Professor();
+    private:
+        AreaAtuacao AreaAtuacao;
+    public:
+        Professor();
+        ~Professor();
 };
 #endif

@@ -3,8 +3,13 @@
 
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
 
 using namespace std;
+using DataHora = std::chrono::system_clock::time_point;
 
 enum class NivelPrioridade{
     BAIXA,
@@ -12,16 +17,15 @@ enum class NivelPrioridade{
     ALTA
 };
 
-struct Processo{
-    long numIdentificacao;
-};
-
 class Processo
 {
-    int numIdentificacao;
-    NivelPrioridade NivelPrioridade;
-    int matriculaSolicitante;
+    private:
+        int id;
+        string assunto;
+        DataHora data_hora;
+        NivelPrioridade NivelPrioridade;
+        int matriculaSolicitante;
+    public: 
+
 };
-
-
 #endif

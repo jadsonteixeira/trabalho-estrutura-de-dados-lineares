@@ -8,12 +8,8 @@ using namespace std;
 
 class Estudante{
     private: 
-        long numMatricula;
-        string cpf;
-        string nome;
         string curso;
     public:
     
 };
-
 #endif
