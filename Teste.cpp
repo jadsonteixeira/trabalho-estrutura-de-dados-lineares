@@ -1,7 +1,6 @@
-#include <iostream>
 #include <cstdlib>
 
-using namespace std;
+#include "Pessoa.hpp"
 
 int main() {
     system("cls");
