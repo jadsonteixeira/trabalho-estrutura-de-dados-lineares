@@ -2,6 +2,7 @@
 #define _PROCESSO_HPP_
 
 #include "NivelPrioridade.hpp"
+#include "Pessoa.hpp"
 
 #include <iostream>
 #include <string>
@@ -18,17 +19,19 @@ class Processo {
         NivelPrioridade nivel_prioridade;
         string assunto;
         string data_hora;
+        int matricula_solictante;
 
         string gerarDataHora() const; 
 
     public: 
         Processo();
-        Processo(int id, string assunto);
+        Processo(int id, const Pessoa &solicitante, string assunto);
 
         string getDataHora() const;
         int getId() const;
         NivelPrioridade getNivelPrioridade() const;
         string getAssunto() const;
+        int getMatriculaSolicitante() const;
 
         void exibirDados() const;
 
