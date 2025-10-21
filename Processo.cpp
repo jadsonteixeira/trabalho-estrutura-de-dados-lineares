@@ -1,11 +1,12 @@
 #include "Processo.hpp"
 #include "NivelPrioridade.hpp"
 
-Processo::Processo(int id_processo, string assunto) {
+Processo::Processo(int id_processo, const Pessoa &solicitante, string assunto) {
     this->id_processo = id_processo;
     this->nivel_prioridade = gerarPrioridade();
     this->assunto = assunto;
     this->data_hora = gerarDataHora();
+    this->matricula_solictante = solicitante.getMatricula();
 }
 
 string Processo::getDataHora() const {
@@ -24,8 +25,13 @@ string Processo::getAssunto() const {
     return this->assunto;
 }
 
+int Processo::getMatriculaSolicitante() const {
+    return this->matricula_solictante;
+}
+
 void Processo::exibirDados() const {
     cout << "ID: " << this->getId() << endl;
+    cout << "Matricula Solicitante: " << this->getMatriculaSolicitante() << endl;
     cout << "Data e Hora: " << this->getDataHora() << endl;
     cout << "Assunto: " << this->getAssunto() << endl;
     cout << "Nivel de Prioridade: ";
