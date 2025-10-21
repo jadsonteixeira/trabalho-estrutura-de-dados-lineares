@@ -1,13 +1,32 @@
 #ifndef _CAIXA_PROCESSO_
 #define _CAIXA_PROCESSO_
 
+#include "Processo.hpp"
+
+#include <iostream>
+
 using namespace std;
 
-class CaixaProcesso {
+struct Node {
+    Processo processo;
+    Node * prox;
+};
+
+class CaixaProcessos {
     private:
+        Node * topo;
+        int quantidade_processos;
 
     public:
-        CaixaProcesso();
+        CaixaProcessos();
+        ~CaixaProcessos();
+
+        bool vazia() const;
+        void empilhar(const Processo & processo);
+        Processo desempilhar();
+        void exibirProcessos() const;
+        
+        int getQuantidade() const;
 
 };
 

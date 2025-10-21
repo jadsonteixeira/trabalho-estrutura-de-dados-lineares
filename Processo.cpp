@@ -9,6 +9,13 @@ Processo::Processo(int id_processo, const Pessoa &solicitante, string assunto) {
     this->matricula_solictante = solicitante.getMatricula();
 }
 
+Processo::Processo() {
+    id_processo = 0;
+    assunto = "";
+    data_hora = "";
+    matricula_solictante = 0;
+}
+
 string Processo::getDataHora() const {
     return data_hora;
 }
