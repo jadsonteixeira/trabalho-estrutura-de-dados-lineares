@@ -28,6 +28,8 @@ class CaixaProcessos {
         
         int getQuantidade() const;
 
+        void separarPorPrioridade(CaixaProcessos & caixa, CaixaProcessos & caixa_baixa, CaixaProcessos & caixa_media, CaixaProcessos & caixa_alta) const;
+
 };
 
 #endif

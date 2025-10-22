@@ -51,11 +51,29 @@ void CaixaProcessos::exibirProcessos() const {
     cout << "PROCESSOS ABERTOS\n" << endl;
     while (atual != nullptr) {
         atual->processo.exibirDados();
-        cout << "\n--------------------" << endl;
+        cout << "\n------------------------------" << endl;
         atual = atual->prox;
     }
 }
 
 int CaixaProcessos::getQuantidade() const {
     return quantidade_processos;
+}
+
+void CaixaProcessos::separarPorPrioridade(CaixaProcessos & caixa, CaixaProcessos & caixa_baixa, CaixaProcessos & caixa_media, CaixaProcessos & caixa_alta) const {
+    while (!caixa.vazia()) {
+        Processo p = caixa.desempilhar();
+
+        switch (p.getNivelPrioridade()) {
+            case ALTA:
+                caixa_alta.empilhar(p);
+                break;
+            case MEDIA:
+                caixa_media.empilhar(p);
+                break;
+            case BAIXA:
+                caixa_baixa.empilhar(p);
+                break;
+        }
+    }
 }
