@@ -2,22 +2,32 @@
 #define FILA_MEDIA_PRIORIDADE_HPP
 
 #include <iostream>
+#include <stdexcept>
 #include "Processo.hpp"
-#include "NoProcessos.hpp"  
 
 using namespace std;
 
 class FilaMediaPrioridade {
 private:
-    FilaMediaDupla fila;
+    struct Node {
+        Processo processo;
+        Node* ant;
+        Node* prox;
+    };
+
+    Node* head;
+    Node* tail;
+    int quantidade;
 
 public:
     FilaMediaPrioridade();
+    ~FilaMediaPrioridade();
 
-    void enfileirar(Processo processo);
-    bool estaVazia();
-    void exibir();
-    Processo desenfileirar(); 
+    bool vazia() const;
+    void enfileirar(const Processo& processo);
+    Processo desenfileirar();
+    void exibirProcessos() const;
+    int getQuantidade() const;
 };
 
 #endif
