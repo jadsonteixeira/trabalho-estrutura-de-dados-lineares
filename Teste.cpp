@@ -6,7 +6,7 @@
 #include "CaixaProcessos.hpp"
 #include "Estudante.hpp"
 #include "Professor.hpp"
-#include "FilaMedia.hpp"
+#include "FilaBaixa.hpp"
 
 using namespace std;
 
@@ -45,14 +45,14 @@ int main() {
     cout << "\n\nMEDIA PRIORIDADE\n\n";
     caixa_media_prioridade.exibirProcessos();
 
-    FilaMedia fila_media;
+    FilaBaixa fila_baixa;
 
     while (!caixa_media_prioridade.vazia()) {
         Processo p = caixa_media_prioridade.desempilhar();
-        fila_media.enfileirar(p);
+        fila_baixa.enfileirar(p);
     }
 
-    cout << "Processos media prioridade: " << fila_media.getQuantidadeProcessos() << endl;
+    cout << "Processos media prioridade: " << fila_baixa.getQuantidadeProcessos() << endl;
 
     return 0;
 }

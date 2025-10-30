@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class FilaMedia {
+class FilaBaixa {
     private:
         struct Node {
             Processo processo;
@@ -20,8 +20,8 @@ class FilaMedia {
         int quantidade_processos;
 
     public:
-        FilaMedia();
-        ~FilaMedia();
+        FilaBaixa();
+        ~FilaBaixa();
 
         bool vazia() const;
         void enfileirar(const Processo & processo);

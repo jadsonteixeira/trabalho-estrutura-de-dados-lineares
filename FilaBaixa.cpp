@@ -1,20 +1,20 @@
-#include "FilaMedia.hpp"
+#include "FilaBaixa.hpp"
 
-FilaMedia::FilaMedia() {
+FilaBaixa::FilaBaixa() {
     head = nullptr;
     tail = nullptr;
     quantidade_processos = 0;
 }
 
-FilaMedia::~FilaMedia() {
-
+FilaBaixa::~FilaBaixa() {
+    
 }
 
-bool FilaMedia::vazia() const {
+bool FilaBaixa::vazia() const {
     return head == nullptr;
 }
 
-void FilaMedia::enfileirar(const Processo & processo) {
+void FilaBaixa::enfileirar(const Processo & processo) {
     Node * no = new Node;
     no->processo = processo;
     no->prox = nullptr;
@@ -32,7 +32,7 @@ void FilaMedia::enfileirar(const Processo & processo) {
     cout << "Processo ID: " << processo.getId() << " enfileirado com sucesso" << endl;
 }
 
-Processo FilaMedia::desenfileirar() {
+Processo FilaBaixa::desenfileirar() {
     if (vazia()) {
         throw out_of_range("Fila vazia");
     }
@@ -56,7 +56,7 @@ Processo FilaMedia::desenfileirar() {
     return processo;
 }
 
-void FilaMedia::exibirProcessos() const {
+void FilaBaixa::exibirProcessos() const {
     if (vazia()) {
         cout << "Fila vazia" << endl;
         return;
@@ -71,6 +71,6 @@ void FilaMedia::exibirProcessos() const {
     }
 }
 
-int FilaMedia::getQuantidadeProcessos() const {
+int FilaBaixa::getQuantidadeProcessos() const {
     return quantidade_processos;
 }
