@@ -62,7 +62,7 @@ void FilaBaixa::exibirProcessos() const {
         return;
     }
 
-    cout << "PROCESSOS MEDIA PRIORIDADE" << endl;
+    cout << "PROCESSOS BAIXA PRIORIDADE" << endl;
     Node * atual = head;
     while (atual != nullptr) {
         atual->processo.exibirDados();
