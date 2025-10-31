@@ -29,7 +29,7 @@ void FilaBaixa::enfileirar(const Processo & processo) {
     tail = no;
     quantidade_processos++;
 
-    cout << "Processo ID: " << processo.getId() << " enfileirado com sucesso" << endl;
+    //cout << "Processo ID: " << processo.getId() << " enfileirado com sucesso" << endl;
 }
 
 Processo FilaBaixa::desenfileirar() {
@@ -51,7 +51,7 @@ Processo FilaBaixa::desenfileirar() {
     delete temp;
     quantidade_processos--;
 
-    cout << "Processo ID: " << processo.getId() << " removido com sucesso" << endl;
+    cout << "Processo ID: " << processo.getId() << " tramitado" << endl;
 
     return processo;
 }

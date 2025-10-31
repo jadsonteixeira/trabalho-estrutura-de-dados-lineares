@@ -20,7 +20,7 @@ void CaixaProcessos::empilhar(const Processo & processo) {
     topo = novo; // atualiza o topo
     quantidade_processos++; 
 
-    cout << "Processo ID: " << processo.getId() << " empilhado com sucesso" << endl;
+    //cout << "Processo ID: " << processo.getId() << " empilhado com sucesso" << endl;
 }
 
 Processo CaixaProcessos::desempilhar() {
@@ -36,7 +36,7 @@ Processo CaixaProcessos::desempilhar() {
 
     quantidade_processos--;
 
-    cout << "Processo ID: " << processo.getId() << " removido" << endl;
+    //cout << "Processo ID: " << processo.getId() << " removido" << endl;
 
     return processo;
 }
@@ -48,10 +48,10 @@ void CaixaProcessos::exibirProcessos() const {
     }
 
     Node * atual = topo;
-    cout << "PROCESSOS ABERTOS\n" << endl;
+    //cout << "PROCESSOS ABERTOS\n" << endl;
     while (atual != nullptr) {
         atual->processo.exibirDados();
-        cout << "\n------------------------------" << endl;
+        cout << "\n--------------------------------" << endl;
         atual = atual->prox;
     }
 }

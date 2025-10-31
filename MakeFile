@@ -1,0 +1,30 @@
+# Nome do compilador
+CXX = g++
+
+# Opções de compilação (recomendado: mostrar erros e avisos)
+CXXFLAGS = -Wall -std=c++17
+
+# Nome do executável final
+TARGET = Teste
+
+# Lista de arquivos fonte
+SRC = Teste.cpp \
+      Pessoa.cpp \
+      Estudante.cpp \
+      Professor.cpp \
+      Processo.cpp \
+      CaixaProcessos.cpp \
+      FilaBaixa.cpp \
+      FilaMediaPrioridade.cpp \
+      FilaAltaPrioridade.cpp
+
+# Regra padrão: compilar tudo
+all: $(TARGET)
+
+# Como gerar o executável a partir dos .cpp
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+
+# Limpar arquivos compilados (opcional)
+clean:
+	rm -f $(TARGET)

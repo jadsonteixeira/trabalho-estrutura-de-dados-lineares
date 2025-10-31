@@ -69,16 +69,16 @@ string Processo::gerarDataHora() const {
 }
 
 int Processo::gerarNumPrioridade() const {
-    int num_prioridade = rand() % 100 + 1;
+    int num_prioridade = rand() % 10 + 1;
     return num_prioridade;
 }
 
 NivelPrioridade Processo::gerarPrioridade() {
     int num = gerarNumPrioridade();
 
-    if (num >= 60) {
+    if (num > 0 && num <= 6) {
         return BAIXA;
-    } else if (num >= 20) {
+    } else if (num > 6 && num <= 9) {
         return MEDIA;
     } else {
         return ALTA;
