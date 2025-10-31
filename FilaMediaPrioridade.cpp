@@ -7,9 +7,12 @@ FilaMediaPrioridade::FilaMediaPrioridade() {
 }
 
 FilaMediaPrioridade::~FilaMediaPrioridade() {
-    while (!vazia()) {
-        desenfileirar();
+    while (head) {
+        Node* temp = head;
+        head = head->prox;
+        delete temp;
     }
+    tail = nullptr;
 }
 
 bool FilaMediaPrioridade::vazia() const {

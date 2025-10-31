@@ -7,7 +7,11 @@ FilaBaixa::FilaBaixa() {
 }
 
 FilaBaixa::~FilaBaixa() {
-    
+    while (head) {       // head é o ponteiro para o início da fila
+        Node* temp = head;
+        head = head->prox;
+        delete temp;     // libera cada nó
+    }
 }
 
 bool FilaBaixa::vazia() const {

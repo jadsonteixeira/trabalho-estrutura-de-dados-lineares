@@ -84,3 +84,7 @@ NivelPrioridade Processo::gerarPrioridade() {
         return ALTA;
     }
 }
+
+void Processo::setNivelPrioridade(NivelPrioridade nivel_prioridade){
+    this->nivel_prioridade = nivel_prioridade;
+}

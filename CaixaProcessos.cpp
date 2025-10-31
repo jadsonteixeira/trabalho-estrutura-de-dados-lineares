@@ -6,7 +6,9 @@ CaixaProcessos::CaixaProcessos() {
 }
 
 CaixaProcessos::~CaixaProcessos() {
-
+    while (!vazia()) {
+        desempilhar();   
+    }
 }
 
 bool CaixaProcessos::vazia() const {
@@ -14,10 +16,10 @@ bool CaixaProcessos::vazia() const {
 }
 
 void CaixaProcessos::empilhar(const Processo & processo) {
-    Node * novo = new Node; // cria um novo no
-    novo->processo = processo; // copia o processo
-    novo->prox = topo; // aponta para o antigo topo
-    topo = novo; // atualiza o topo
+    Node * novo = new Node;
+    novo->processo = processo;
+    novo->prox = topo; 
+    topo = novo; 
     quantidade_processos++; 
 
     cout << "Processo ID: " << processo.getId() << " empilhado com sucesso" << endl;
@@ -28,9 +30,9 @@ Processo CaixaProcessos::desempilhar() {
         throw out_of_range("Nao tem nenhum processo aberto");
     }
 
-    Node * temp = topo; // guarda a referência ao topo atual
-    Processo processo = temp->processo; // copia o processo
-    topo = topo->prox; // move o topo para o proximo
+    Node * temp = topo; 
+    Processo processo = temp->processo; 
+    topo = topo->prox; 
     
     delete temp;
 

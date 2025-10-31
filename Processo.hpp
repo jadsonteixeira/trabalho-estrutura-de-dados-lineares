@@ -37,6 +37,8 @@ class Processo {
 
         int gerarNumPrioridade() const;
         NivelPrioridade gerarPrioridade();
+
+        void setNivelPrioridade(NivelPrioridade nivel_prioridade);
 };
 
 #endif

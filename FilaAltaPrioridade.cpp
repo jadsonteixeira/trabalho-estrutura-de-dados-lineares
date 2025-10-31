@@ -7,11 +7,15 @@ FilaAltaPrioridade::FilaAltaPrioridade() {
     quantidade = 0;
 }
 
+
 FilaAltaPrioridade::~FilaAltaPrioridade() {
-    while (!estaVazia()) {
-        desenfileirar();
+    while (head) {
+        NoFilaSimplesAlta* temp = head;
+        head = head->prox;
+        delete temp;
     }
 }
+
 
 void FilaAltaPrioridade::enfileirar(const Processo &processo) {
     NoFilaSimplesAlta* novo = new NoFilaSimplesAlta{processo, nullptr};
