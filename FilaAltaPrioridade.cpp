@@ -48,10 +48,16 @@ bool FilaAltaPrioridade::estaVazia()const {
 }
 
 void FilaAltaPrioridade::exibir() const {
+    if (estaVazia()) {
+        std::cout << "Fila vazia" << std::endl;
+        return;
+    }
+
+    std::cout << "PROCESSOS ALTA PRIORIDADE" << std::endl;
     NoFilaSimplesAlta* atual = head;
-    while (atual) {
-        std::cout << "ID: " << atual->processo.getId()
-                  << " - Assunto: " << atual->processo.getAssunto() << std::endl;
+    while (atual != nullptr) {
+        atual->processo.exibirDados();
+        std::cout << "\n------------------------------\n";
         atual = atual->prox;
     }
 }
